@@ -1,4 +1,4 @@
-# NLP Sentiment Analysis (Russian Text)
+# mlops курсовая
 
 Проект классифицирует русскоязычные отзывы на три класса: Положительный, Нейтральный, Отрицательный.  
 Реализован полный ML-пайплайн с обучением моделей, инференс-сервисом на FastAPI и Streamlit UI.
@@ -45,44 +45,51 @@
 
 ### 1.Клонирование и настройка окружения
 
+##### Клонировать репозиторий
+
 ```bash
-# Клонировать репозиторий
 git clone <repository-url>
 cd mlops-coursework
 ```
 
+##### Создать виртуальное окружение
+
 ```bash
-# Создать виртуальное окружение
 python -m venv venv
 ```
 
+##### Активировать (Linux/macOS)
+
 ```bash
-# Активировать (Linux/macOS)
 source venv/bin/activate
 ```
 
+##### Активировать (Windows)
+
 ```bash
-# Активировать (Windows)
 venv\Scripts\activate
 ```
 
+##### Установить зависимости
+
 ```bash
-# Установить зависимости
 pip install -r requirements.txt
 ```
 
 ### 2. Эксперименты
 
+##### Запуск экспериментов
+
 ```bash
-#### Запуск экспериментов
 python src/experiments.py
 
 ```
 
 ### MLflow UI
 
+##### Отслеживания экспериментов
+
 ```bash
-#### Отслеживания экспериментов
 mlflow ui --port 5000
 ```
 
@@ -101,14 +108,22 @@ uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
 ### Streamlit UI
 
+#### Команда для запуска streamlit
+
 ```bash
-### Для удобного тестирования модели через веб-интерфейс:
 streamlit run ui/streamlit_ui.py
 ```
 
 ### Контейнеризация
 
+##### Сборка образа
+
 ```bash
 docker build -t nlp-sentiment-inference .
+```
+
+##### Запуск контейнера
+
+```bash
 docker run -p 8000:8000 nlp-sentiment-inference
 ```
